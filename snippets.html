@@ -1,0 +1,254 @@
+<title>Omanita smoove Snippets</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0; background:#F4F6F5; color:#22302D; font:16px/1.6 'Segoe UI',Arial,sans-serif;}
+.wrap{max-width:1040px; margin:0 auto; padding:30px 20px;}
+h1{font-size:28px;} h2{font-size:20px; margin:0 0 4px;}
+.blk{background:#fff; border:1px solid #DCE4DF; border-radius:14px; margin:26px 0; overflow:hidden;}
+.blk-h{padding:16px 22px; border-bottom:1px solid #EEF2EF; display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px;}
+.blk-h .he{color:#3E8A7D; font-weight:700;}
+.blk-h p{margin:2px 0 0; color:#5C6E6A; font-size:14px;}
+.preview{padding:26px 18px; background:#FBFCFB;}
+.codebar{display:flex; justify-content:space-between; align-items:center; padding:8px 22px; background:#EEF2EF; font-size:13px; color:#5C6E6A;}
+button.copy{background:#C9557B; color:#fff; border:0; border-radius:999px; padding:6px 18px; font-weight:700; cursor:pointer; font-size:14px;}
+textarea{width:100%; height:130px; border:0; padding:14px 22px; box-sizing:border-box; font:12.5px/1.5 Consolas,monospace; color:#44524E; background:#fff; resize:vertical; direction:ltr;}
+.note{background:#FFF6E3; border:1px solid #EAD9A8; border-radius:10px; padding:12px 18px; font-size:14.5px;}
+</style>
+<div class="wrap">
+<h1>🧩 Omanita → smoove snippet pack</h1>
+<p>Each block below is <b>self-contained HTML</b>. In the smoove page editor: add an <b>HTML component</b> where the old section sits, paste the code, delete the old section. Pure HTML/CSS, no scripts — safe for smoove's editor. Preview of each block is rendered below exactly as it will appear.</p>
+<div class="note">⚠️ Test on the page preview before publishing. If smoove's global styles nudge something (fonts/spacing), tell Claude what looks off — each snippet is namespaced (<code>om-*</code>) so fixes are local.</div>
+
+<div class="blk">
+<div class="blk-h"><h2>1. Announcement banner · <span class="he">באנר הודעה / הרשמה</span></h2><p>Replaces the plain "ההרשמה נפתחה" text lines at the top.</p></div>
+<div class="preview"><div class="om-banner" dir="rtl" style="font-family:'Assistant',Arial,sans-serif; background:#ECF3EF; border:1px solid #DCE4DF; border-radius:14px; padding:18px 22px; text-align:center; margin:10px auto; max-width:720px;">
+<div style="font-size:15px; font-weight:700; color:#3E8A7D; letter-spacing:.04em; margin-bottom:6px;">✦ ההרשמה לשנה החדשה נפתחה ✦</div>
+<div style="font-size:20px; font-weight:700; color:#2C3B38;">החוגים מעודכנים לספטמבר 2026 · מספר המקומות מוגבל!</div>
+<a href="https://wa.me/972524617163" style="display:inline-block; margin-top:12px; background:#C9557B; color:#ffffff; text-decoration:none; font-weight:700; font-size:16px; padding:9px 26px; border-radius:999px;">לשיעור ניסיון בווטסאפ</a>
+</div></div>
+<div class="codebar"><span>paste this into a smoove HTML component:</span><button class="copy" onclick="var t=this.closest('.blk').querySelector('textarea');t.select();document.execCommand('copy');this.textContent='Copied ✓';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></div>
+<textarea readonly spellcheck="false">&lt;div class=&quot;om-banner&quot; dir=&quot;rtl&quot; style=&quot;font-family:&#x27;Assistant&#x27;,Arial,sans-serif; background:#ECF3EF; border:1px solid #DCE4DF; border-radius:14px; padding:18px 22px; text-align:center; margin:10px auto; max-width:720px;&quot;&gt;
+&lt;div style=&quot;font-size:15px; font-weight:700; color:#3E8A7D; letter-spacing:.04em; margin-bottom:6px;&quot;&gt;✦ ההרשמה לשנה החדשה נפתחה ✦&lt;/div&gt;
+&lt;div style=&quot;font-size:20px; font-weight:700; color:#2C3B38;&quot;&gt;החוגים מעודכנים לספטמבר 2026 · מספר המקומות מוגבל!&lt;/div&gt;
+&lt;a href=&quot;https://wa.me/972524617163&quot; style=&quot;display:inline-block; margin-top:12px; background:#C9557B; color:#ffffff; text-decoration:none; font-weight:700; font-size:16px; padding:9px 26px; border-radius:999px;&quot;&gt;לשיעור ניסיון בווטסאפ&lt;/a&gt;
+&lt;/div&gt;</textarea>
+</div>
+<div class="blk">
+<div class="blk-h"><h2>2. Why-us cards · <span class="he">למה לבחור באומניתה</span></h2><p>Replaces the bullet list of advantages.</p></div>
+<div class="preview"><div class="om-why" dir="rtl">
+<style>
+.om-why{font-family:'Assistant',Arial,sans-serif; max-width:1000px; margin:0 auto;}
+.om-why .om-grid{display:flex; flex-wrap:wrap; gap:16px; justify-content:center;}
+.om-why .om-card{flex:1 1 280px; max-width:320px; background:#ffffff; border:1px solid #DCE4DF; border-radius:14px; padding:18px 20px; box-shadow:0 2px 12px rgba(44,59,56,.08); text-align:right;}
+.om-why .om-ico{width:40px; height:40px; border-radius:999px; background:#DDEBE7; font-size:20px; line-height:40px; text-align:center; margin-bottom:8px;}
+.om-why .om-t{font-size:17px; font-weight:700; color:#2C3B38; margin:0 0 5px;}
+.om-why .om-d{font-size:15px; color:#5C6E6A; margin:0; line-height:1.55;}
+</style>
+<div class="om-grid">
+<div class="om-card"><div class="om-ico">🎨</div><p class="om-t">18 שנות ניסיון</p><p class="om-d">עבודה עם קבוצות ויחידים בכל הגילאים, מילדים ועד מבוגרים.</p></div>
+<div class="om-card"><div class="om-ico">💛</div><p class="om-t">פסיכולוגיה חיובית</p><p class="om-d">החוג כולו נעשה בשיטת העצמה, וכל תלמיד זוכה ליחס אישי.</p></div>
+<div class="om-card"><div class="om-ico">👥</div><p class="om-t">קבוצות קטנות</p><p class="om-d">עד 6–8 תלמידים בקבוצה, למען איכות למידה מקסימלית.</p></div>
+<div class="om-card"><div class="om-ico">🖌️</div><p class="om-t">חומרים איכותיים</p><p class="om-d">עבודה עם חומרים מגוונים הניתנים במקום (פרט לקנבסים).</p></div>
+<div class="om-card"><div class="om-ico">🏡</div><p class="om-t">אווירה ביתית</p><p class="om-d">שתייה קרה וחמה חופשי, סביבה חמה ותומכת ומקרן צמוד.</p></div>
+<div class="om-card"><div class="om-ico">🌱</div><p class="om-t">יוצר עצמאי</p><p class="om-d">החוג מלמד איך להיות יוצר עצמאי: ביטוי אישי וחשיבה מחוץ לקופסה.</p></div>
+</div>
+</div></div>
+<div class="codebar"><span>paste this into a smoove HTML component:</span><button class="copy" onclick="var t=this.closest('.blk').querySelector('textarea');t.select();document.execCommand('copy');this.textContent='Copied ✓';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></div>
+<textarea readonly spellcheck="false">&lt;div class=&quot;om-why&quot; dir=&quot;rtl&quot;&gt;
+&lt;style&gt;
+.om-why{font-family:&#x27;Assistant&#x27;,Arial,sans-serif; max-width:1000px; margin:0 auto;}
+.om-why .om-grid{display:flex; flex-wrap:wrap; gap:16px; justify-content:center;}
+.om-why .om-card{flex:1 1 280px; max-width:320px; background:#ffffff; border:1px solid #DCE4DF; border-radius:14px; padding:18px 20px; box-shadow:0 2px 12px rgba(44,59,56,.08); text-align:right;}
+.om-why .om-ico{width:40px; height:40px; border-radius:999px; background:#DDEBE7; font-size:20px; line-height:40px; text-align:center; margin-bottom:8px;}
+.om-why .om-t{font-size:17px; font-weight:700; color:#2C3B38; margin:0 0 5px;}
+.om-why .om-d{font-size:15px; color:#5C6E6A; margin:0; line-height:1.55;}
+&lt;/style&gt;
+&lt;div class=&quot;om-grid&quot;&gt;
+&lt;div class=&quot;om-card&quot;&gt;&lt;div class=&quot;om-ico&quot;&gt;🎨&lt;/div&gt;&lt;p class=&quot;om-t&quot;&gt;18 שנות ניסיון&lt;/p&gt;&lt;p class=&quot;om-d&quot;&gt;עבודה עם קבוצות ויחידים בכל הגילאים, מילדים ועד מבוגרים.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;om-card&quot;&gt;&lt;div class=&quot;om-ico&quot;&gt;💛&lt;/div&gt;&lt;p class=&quot;om-t&quot;&gt;פסיכולוגיה חיובית&lt;/p&gt;&lt;p class=&quot;om-d&quot;&gt;החוג כולו נעשה בשיטת העצמה, וכל תלמיד זוכה ליחס אישי.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;om-card&quot;&gt;&lt;div class=&quot;om-ico&quot;&gt;👥&lt;/div&gt;&lt;p class=&quot;om-t&quot;&gt;קבוצות קטנות&lt;/p&gt;&lt;p class=&quot;om-d&quot;&gt;עד 6–8 תלמידים בקבוצה, למען איכות למידה מקסימלית.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;om-card&quot;&gt;&lt;div class=&quot;om-ico&quot;&gt;🖌️&lt;/div&gt;&lt;p class=&quot;om-t&quot;&gt;חומרים איכותיים&lt;/p&gt;&lt;p class=&quot;om-d&quot;&gt;עבודה עם חומרים מגוונים הניתנים במקום (פרט לקנבסים).&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;om-card&quot;&gt;&lt;div class=&quot;om-ico&quot;&gt;🏡&lt;/div&gt;&lt;p class=&quot;om-t&quot;&gt;אווירה ביתית&lt;/p&gt;&lt;p class=&quot;om-d&quot;&gt;שתייה קרה וחמה חופשי, סביבה חמה ותומכת ומקרן צמוד.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;om-card&quot;&gt;&lt;div class=&quot;om-ico&quot;&gt;🌱&lt;/div&gt;&lt;p class=&quot;om-t&quot;&gt;יוצר עצמאי&lt;/p&gt;&lt;p class=&quot;om-d&quot;&gt;החוג מלמד איך להיות יוצר עצמאי: ביטוי אישי וחשיבה מחוץ לקופסה.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</textarea>
+</div>
+<div class="blk">
+<div class="blk-h"><h2>3. Two-city schedule · <span class="he">חוגים: ימים ושעות</span></h2><p>Replaces the long text list of classes.</p></div>
+<div class="preview"><div class="om-sched" dir="rtl">
+<style>
+.om-sched{font-family:'Assistant',Arial,sans-serif; max-width:1000px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;}
+.om-sched .om-city{flex:1 1 340px; background:#ffffff; border:1px solid #DCE4DF; border-radius:16px; overflow:hidden; box-shadow:0 2px 12px rgba(44,59,56,.08);}
+.om-sched .om-ch{padding:14px 20px; font-size:19px; font-weight:700; color:#2C3B38; margin:0;}
+.om-sched .om-ch small{display:block; font-size:13px; font-weight:400; color:#5C6E6A; margin-top:2px;}
+.om-sched .om-kfs .om-ch{background:#DDEBE7;}
+.om-sched .om-raa .om-ch{background:#F3DCE4;}
+.om-sched ul{list-style:none; margin:0; padding:4px 0;}
+.om-sched li{padding:11px 20px; border-top:1px solid #EEF2EF; text-align:right;}
+.om-sched li:first-child{border-top:0;}
+.om-sched .om-n{font-weight:700; color:#2C3B38; font-size:15.5px;}
+.om-sched .om-m{color:#5C6E6A; font-size:13.5px;}
+.om-sched .om-w{font-weight:700; font-size:14.5px; color:#3E8A7D; float:left; direction:ltr;}
+.om-sched .om-raa .om-w{color:#C9557B;}
+</style>
+<div class="om-city om-kfs">
+<p class="om-ch">📍 כפר סבא<small>גולדשטיין 2, שכונת העלייה</small></p>
+<ul>
+<li><span class="om-w">17:00–18:00 · יום א׳</span><span class="om-n">ציור מקצועי · כיתות א׳–ג׳</span><br><span class="om-m">עד 8 ילדים בקבוצה</span></li>
+<li><span class="om-w">15:45–16:45 · יום א׳</span><span class="om-n">ציור מקצועי מתקדמים · ד׳–ו׳</span><br><span class="om-m">עד 7 תלמידים בקבוצה</span></li>
+<li><span class="om-w">15:45–17:15 · יום ג׳</span><span class="om-n">נוער, ציור בהתאמה אישית · ז׳–י״ב</span><br><span class="om-m">עד 8 תלמידים בקבוצה</span></li>
+<li><span class="om-w">18:15–20:15 · יום א׳</span><span class="om-n">ציור מבוגרים · ערב</span><br><span class="om-m">גילאי +18</span></li>
+<li><span class="om-w">10:30–12:30 · יום ג׳</span><span class="om-n">ציור מבוגרים · בוקר <b style="color:#C99435">חדש!</b></span><br><span class="om-m">בהדרכת מישל ברם איברי</span></li>
+<li><span class="om-w">17:30–19:30 · יום ג׳</span><span class="om-n">ציור מבוגרים + נוער · ערב</span><br><span class="om-m">גילאי +14</span></li>
+</ul>
+</div>
+<div class="om-city om-raa">
+<p class="om-ch">📍 רעננה, קריית שרת<small>דרור 12ג׳ דירה 4, בין לב הפארק ונווה זמר</small></p>
+<ul>
+<li><span class="om-w">16:00–17:00 · יום ה׳</span><span class="om-n">ציור מקצועי ילדים · א׳–ג׳</span><br><span class="om-m">עד 8 ילדים בקבוצה</span></li>
+<li><span class="om-w">16:00–17:00 · יום ד׳</span><span class="om-n">ציור מקצועי · ד׳–ו׳</span><br><span class="om-m">עד 7 ילדים בקבוצה</span></li>
+<li><span class="om-w">14:45–15:45 · יום ה׳</span><span class="om-n">נוער, ציור בהתאמה אישית · ז׳–י״ב</span><br><span class="om-m">עד 6 תלמידים בקבוצה</span></li>
+<li><span class="om-w">10:30–12:30 · יום א׳</span><span class="om-n">ציור מבוגרים · בוקר</span><br><span class="om-m">גילאי +18</span></li>
+<li><span class="om-w">10:15–12:15 · יום ד׳</span><span class="om-n">ציור מבוגרים · בוקר</span><br><span class="om-m">גילאי +18</span></li>
+</ul>
+</div>
+</div></div>
+<div class="codebar"><span>paste this into a smoove HTML component:</span><button class="copy" onclick="var t=this.closest('.blk').querySelector('textarea');t.select();document.execCommand('copy');this.textContent='Copied ✓';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></div>
+<textarea readonly spellcheck="false">&lt;div class=&quot;om-sched&quot; dir=&quot;rtl&quot;&gt;
+&lt;style&gt;
+.om-sched{font-family:&#x27;Assistant&#x27;,Arial,sans-serif; max-width:1000px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;}
+.om-sched .om-city{flex:1 1 340px; background:#ffffff; border:1px solid #DCE4DF; border-radius:16px; overflow:hidden; box-shadow:0 2px 12px rgba(44,59,56,.08);}
+.om-sched .om-ch{padding:14px 20px; font-size:19px; font-weight:700; color:#2C3B38; margin:0;}
+.om-sched .om-ch small{display:block; font-size:13px; font-weight:400; color:#5C6E6A; margin-top:2px;}
+.om-sched .om-kfs .om-ch{background:#DDEBE7;}
+.om-sched .om-raa .om-ch{background:#F3DCE4;}
+.om-sched ul{list-style:none; margin:0; padding:4px 0;}
+.om-sched li{padding:11px 20px; border-top:1px solid #EEF2EF; text-align:right;}
+.om-sched li:first-child{border-top:0;}
+.om-sched .om-n{font-weight:700; color:#2C3B38; font-size:15.5px;}
+.om-sched .om-m{color:#5C6E6A; font-size:13.5px;}
+.om-sched .om-w{font-weight:700; font-size:14.5px; color:#3E8A7D; float:left; direction:ltr;}
+.om-sched .om-raa .om-w{color:#C9557B;}
+&lt;/style&gt;
+&lt;div class=&quot;om-city om-kfs&quot;&gt;
+&lt;p class=&quot;om-ch&quot;&gt;📍 כפר סבא&lt;small&gt;גולדשטיין 2, שכונת העלייה&lt;/small&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&quot;om-w&quot;&gt;17:00–18:00 · יום א׳&lt;/span&gt;&lt;span class=&quot;om-n&quot;&gt;ציור מקצועי · כיתות א׳–ג׳&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;om-m&quot;&gt;עד 8 ילדים בקבוצה&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&quot;om-w&quot;&gt;15:45–16:45 · יום א׳&lt;/span&gt;&lt;span class=&quot;om-n&quot;&gt;ציור מקצועי מתקדמים · ד׳–ו׳&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;om-m&quot;&gt;עד 7 תלמידים בקבוצה&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&quot;om-w&quot;&gt;15:45–17:15 · יום ג׳&lt;/span&gt;&lt;span class=&quot;om-n&quot;&gt;נוער, ציור בהתאמה אישית · ז׳–י״ב&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;om-m&quot;&gt;עד 8 תלמידים בקבוצה&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&quot;om-w&quot;&gt;18:15–20:15 · יום א׳&lt;/span&gt;&lt;span class=&quot;om-n&quot;&gt;ציור מבוגרים · ערב&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;om-m&quot;&gt;גילאי +18&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&quot;om-w&quot;&gt;10:30–12:30 · יום ג׳&lt;/span&gt;&lt;span class=&quot;om-n&quot;&gt;ציור מבוגרים · בוקר &lt;b style=&quot;color:#C99435&quot;&gt;חדש!&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;om-m&quot;&gt;בהדרכת מישל ברם איברי&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&quot;om-w&quot;&gt;17:30–19:30 · יום ג׳&lt;/span&gt;&lt;span class=&quot;om-n&quot;&gt;ציור מבוגרים + נוער · ערב&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;om-m&quot;&gt;גילאי +14&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;om-city om-raa&quot;&gt;
+&lt;p class=&quot;om-ch&quot;&gt;📍 רעננה, קריית שרת&lt;small&gt;דרור 12ג׳ דירה 4, בין לב הפארק ונווה זמר&lt;/small&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&quot;om-w&quot;&gt;16:00–17:00 · יום ה׳&lt;/span&gt;&lt;span class=&quot;om-n&quot;&gt;ציור מקצועי ילדים · א׳–ג׳&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;om-m&quot;&gt;עד 8 ילדים בקבוצה&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&quot;om-w&quot;&gt;16:00–17:00 · יום ד׳&lt;/span&gt;&lt;span class=&quot;om-n&quot;&gt;ציור מקצועי · ד׳–ו׳&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;om-m&quot;&gt;עד 7 ילדים בקבוצה&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&quot;om-w&quot;&gt;14:45–15:45 · יום ה׳&lt;/span&gt;&lt;span class=&quot;om-n&quot;&gt;נוער, ציור בהתאמה אישית · ז׳–י״ב&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;om-m&quot;&gt;עד 6 תלמידים בקבוצה&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&quot;om-w&quot;&gt;10:30–12:30 · יום א׳&lt;/span&gt;&lt;span class=&quot;om-n&quot;&gt;ציור מבוגרים · בוקר&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;om-m&quot;&gt;גילאי +18&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&quot;om-w&quot;&gt;10:15–12:15 · יום ד׳&lt;/span&gt;&lt;span class=&quot;om-n&quot;&gt;ציור מבוגרים · בוקר&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;om-m&quot;&gt;גילאי +18&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</textarea>
+</div>
+<div class="blk">
+<div class="blk-h"><h2>4. Price table · <span class="he">מחירון</span></h2><p>Replaces the price text block (also removes its duplicated rows).</p></div>
+<div class="preview"><div class="om-price" dir="rtl">
+<style>
+.om-price{font-family:'Assistant',Arial,sans-serif; max-width:820px; margin:0 auto;}
+.om-price .om-tbl{background:#ffffff; border:1px solid #DCE4DF; border-radius:16px; overflow:hidden; box-shadow:0 2px 12px rgba(44,59,56,.08);}
+.om-price .om-row{display:flex; justify-content:space-between; align-items:center; gap:14px; padding:14px 22px; border-top:1px solid #EEF2EF; text-align:right;}
+.om-price .om-row:first-child{border-top:0;}
+.om-price .om-n{font-weight:700; color:#2C3B38; font-size:16px; margin:0;}
+.om-price .om-m{color:#5C6E6A; font-size:13.5px; margin:2px 0 0;}
+.om-price .om-v{font-size:22px; font-weight:700; color:#3E8A7D; white-space:nowrap; direction:ltr;}
+.om-price .om-v small{font-size:13px; color:#5C6E6A; font-weight:600;}
+.om-price .om-note{background:#ffffff; border:1px solid #DCE4DF; border-radius:10px; padding:10px 16px; font-size:14.5px; color:#5C6E6A; margin-top:10px; text-align:right;}
+.om-price .om-note b{color:#C99435;}
+</style>
+<div class="om-tbl">
+<div class="om-row"><div><p class="om-n">ציור מקצועי · כיתות א׳–ג׳</p><p class="om-m">רעננה / כפר סבא · עד 8 ילדים · כולל כל החומרים</p></div><div class="om-v">400 ₪ <small>לחודש</small></div></div>
+<div class="om-row"><div><p class="om-n">ציור מקצועי מתקדמים · כיתות ד׳–ו׳</p><p class="om-m">רעננה / כפר סבא · עד 7 ילדים · כולל כל החומרים</p></div><div class="om-v">450 ₪ <small>לחודש</small></div></div>
+<div class="om-row"><div><p class="om-n">נוער · שעה בהתאמה אישית · ז׳–י״ב</p><p class="om-m">רעננה · עד 6 תלמידים · כולל חומרים (ללא קנבסים)</p></div><div class="om-v">450 ₪ <small>לחודש</small></div></div>
+<div class="om-row"><div><p class="om-n">נוער · שעה וחצי · ז׳–י״ב</p><p class="om-m">עד 8 תלמידים · כולל חומרים (ללא קנבסים)</p></div><div class="om-v">560 ₪ <small>לחודש</small></div></div>
+<div class="om-row"><div><p class="om-n">ציור מבוגרים</p><p class="om-m">רעננה / כפר סבא · תשלום בסוף החודש לפי מספר ההגעות · כולל חומרים (ללא קנבסים; יש קנבסים ממוחזרים ודפי קנבס)</p></div><div class="om-v">140 ₪ <small>לשיעור שעתיים</small></div></div>
+</div>
+<div class="om-note">💛 <b>הנחה 5%</b> לבן משפחה נוסף</div>
+<div class="om-note">✏️ תפיסת מקום לשיעור ניסיון כרוכה בדמי רצינות של <b>50 ₪</b> בביט או בפייבוקס, ורישום בווטסאפ של יום ושעת החוג</div>
+</div></div>
+<div class="codebar"><span>paste this into a smoove HTML component:</span><button class="copy" onclick="var t=this.closest('.blk').querySelector('textarea');t.select();document.execCommand('copy');this.textContent='Copied ✓';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></div>
+<textarea readonly spellcheck="false">&lt;div class=&quot;om-price&quot; dir=&quot;rtl&quot;&gt;
+&lt;style&gt;
+.om-price{font-family:&#x27;Assistant&#x27;,Arial,sans-serif; max-width:820px; margin:0 auto;}
+.om-price .om-tbl{background:#ffffff; border:1px solid #DCE4DF; border-radius:16px; overflow:hidden; box-shadow:0 2px 12px rgba(44,59,56,.08);}
+.om-price .om-row{display:flex; justify-content:space-between; align-items:center; gap:14px; padding:14px 22px; border-top:1px solid #EEF2EF; text-align:right;}
+.om-price .om-row:first-child{border-top:0;}
+.om-price .om-n{font-weight:700; color:#2C3B38; font-size:16px; margin:0;}
+.om-price .om-m{color:#5C6E6A; font-size:13.5px; margin:2px 0 0;}
+.om-price .om-v{font-size:22px; font-weight:700; color:#3E8A7D; white-space:nowrap; direction:ltr;}
+.om-price .om-v small{font-size:13px; color:#5C6E6A; font-weight:600;}
+.om-price .om-note{background:#ffffff; border:1px solid #DCE4DF; border-radius:10px; padding:10px 16px; font-size:14.5px; color:#5C6E6A; margin-top:10px; text-align:right;}
+.om-price .om-note b{color:#C99435;}
+&lt;/style&gt;
+&lt;div class=&quot;om-tbl&quot;&gt;
+&lt;div class=&quot;om-row&quot;&gt;&lt;div&gt;&lt;p class=&quot;om-n&quot;&gt;ציור מקצועי · כיתות א׳–ג׳&lt;/p&gt;&lt;p class=&quot;om-m&quot;&gt;רעננה / כפר סבא · עד 8 ילדים · כולל כל החומרים&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;om-v&quot;&gt;400 ₪ &lt;small&gt;לחודש&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;om-row&quot;&gt;&lt;div&gt;&lt;p class=&quot;om-n&quot;&gt;ציור מקצועי מתקדמים · כיתות ד׳–ו׳&lt;/p&gt;&lt;p class=&quot;om-m&quot;&gt;רעננה / כפר סבא · עד 7 ילדים · כולל כל החומרים&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;om-v&quot;&gt;450 ₪ &lt;small&gt;לחודש&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;om-row&quot;&gt;&lt;div&gt;&lt;p class=&quot;om-n&quot;&gt;נוער · שעה בהתאמה אישית · ז׳–י״ב&lt;/p&gt;&lt;p class=&quot;om-m&quot;&gt;רעננה · עד 6 תלמידים · כולל חומרים (ללא קנבסים)&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;om-v&quot;&gt;450 ₪ &lt;small&gt;לחודש&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;om-row&quot;&gt;&lt;div&gt;&lt;p class=&quot;om-n&quot;&gt;נוער · שעה וחצי · ז׳–י״ב&lt;/p&gt;&lt;p class=&quot;om-m&quot;&gt;עד 8 תלמידים · כולל חומרים (ללא קנבסים)&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;om-v&quot;&gt;560 ₪ &lt;small&gt;לחודש&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;om-row&quot;&gt;&lt;div&gt;&lt;p class=&quot;om-n&quot;&gt;ציור מבוגרים&lt;/p&gt;&lt;p class=&quot;om-m&quot;&gt;רעננה / כפר סבא · תשלום בסוף החודש לפי מספר ההגעות · כולל חומרים (ללא קנבסים; יש קנבסים ממוחזרים ודפי קנבס)&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;om-v&quot;&gt;140 ₪ &lt;small&gt;לשיעור שעתיים&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;om-note&quot;&gt;💛 &lt;b&gt;הנחה 5%&lt;/b&gt; לבן משפחה נוסף&lt;/div&gt;
+&lt;div class=&quot;om-note&quot;&gt;✏️ תפיסת מקום לשיעור ניסיון כרוכה בדמי רצינות של &lt;b&gt;50 ₪&lt;/b&gt; בביט או בפייבוקס, ורישום בווטסאפ של יום ושעת החוג&lt;/div&gt;
+&lt;/div&gt;</textarea>
+</div>
+<div class="blk">
+<div class="blk-h"><h2>5. Vacation calendar · <span class="he">לוח חופשות</span></h2><p>Replaces the vacation text table.</p></div>
+<div class="preview"><div class="om-vac" dir="rtl">
+<style>
+.om-vac{font-family:'Assistant',Arial,sans-serif; max-width:640px; margin:0 auto;}
+.om-vac h4{font-size:20px; font-weight:700; color:#2C3B38; text-align:center; margin:0 0 12px;}
+.om-vac table{width:100%; border-collapse:collapse; background:#ffffff; border:1px solid #DCE4DF; border-radius:14px; overflow:hidden; box-shadow:0 2px 12px rgba(44,59,56,.08); font-size:15px;}
+.om-vac th{background:#DDEBE7; color:#3E8A7D; text-align:right; padding:9px 16px; font-size:13.5px;}
+.om-vac td{padding:9px 16px; border-top:1px solid #EEF2EF; color:#2C3B38; text-align:right;}
+.om-vac td.om-d{direction:ltr; text-align:left; color:#5C6E6A; white-space:nowrap;}
+</style>
+<h4>🎈 לוח חופשות 2026–2027</h4>
+<table>
+<tr><th>חג</th><th>ימים</th><th>תאריכים</th></tr>
+<tr><td>ראש השנה</td><td>ו׳–א׳</td><td class="om-d">11/9–13/9</td></tr>
+<tr><td>יום כיפור</td><td>א׳–ב׳</td><td class="om-d">20/9–21/9</td></tr>
+<tr><td>סוכות</td><td>ו׳–ש׳</td><td class="om-d">25/9–3/10</td></tr>
+<tr><td>חנוכה</td><td>א׳–ש׳</td><td class="om-d">6/12–12/12</td></tr>
+<tr><td>פורים</td><td>ג׳–ד׳</td><td class="om-d">23/3–24/3</td></tr>
+<tr><td>פסח</td><td>ד׳–ד׳</td><td class="om-d">18/4–28/4</td></tr>
+<tr><td>יום הזיכרון ויום העצמאות</td><td>ג׳–ד׳</td><td class="om-d">11/5–12/5</td></tr>
+<tr><td>שבועות</td><td>ה׳–ו׳</td><td class="om-d">10/6–11/6</td></tr>
+</table>
+</div></div>
+<div class="codebar"><span>paste this into a smoove HTML component:</span><button class="copy" onclick="var t=this.closest('.blk').querySelector('textarea');t.select();document.execCommand('copy');this.textContent='Copied ✓';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></div>
+<textarea readonly spellcheck="false">&lt;div class=&quot;om-vac&quot; dir=&quot;rtl&quot;&gt;
+&lt;style&gt;
+.om-vac{font-family:&#x27;Assistant&#x27;,Arial,sans-serif; max-width:640px; margin:0 auto;}
+.om-vac h4{font-size:20px; font-weight:700; color:#2C3B38; text-align:center; margin:0 0 12px;}
+.om-vac table{width:100%; border-collapse:collapse; background:#ffffff; border:1px solid #DCE4DF; border-radius:14px; overflow:hidden; box-shadow:0 2px 12px rgba(44,59,56,.08); font-size:15px;}
+.om-vac th{background:#DDEBE7; color:#3E8A7D; text-align:right; padding:9px 16px; font-size:13.5px;}
+.om-vac td{padding:9px 16px; border-top:1px solid #EEF2EF; color:#2C3B38; text-align:right;}
+.om-vac td.om-d{direction:ltr; text-align:left; color:#5C6E6A; white-space:nowrap;}
+&lt;/style&gt;
+&lt;h4&gt;🎈 לוח חופשות 2026–2027&lt;/h4&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;חג&lt;/th&gt;&lt;th&gt;ימים&lt;/th&gt;&lt;th&gt;תאריכים&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;ראש השנה&lt;/td&gt;&lt;td&gt;ו׳–א׳&lt;/td&gt;&lt;td class=&quot;om-d&quot;&gt;11/9–13/9&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;יום כיפור&lt;/td&gt;&lt;td&gt;א׳–ב׳&lt;/td&gt;&lt;td class=&quot;om-d&quot;&gt;20/9–21/9&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;סוכות&lt;/td&gt;&lt;td&gt;ו׳–ש׳&lt;/td&gt;&lt;td class=&quot;om-d&quot;&gt;25/9–3/10&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;חנוכה&lt;/td&gt;&lt;td&gt;א׳–ש׳&lt;/td&gt;&lt;td class=&quot;om-d&quot;&gt;6/12–12/12&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;פורים&lt;/td&gt;&lt;td&gt;ג׳–ד׳&lt;/td&gt;&lt;td class=&quot;om-d&quot;&gt;23/3–24/3&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;פסח&lt;/td&gt;&lt;td&gt;ד׳–ד׳&lt;/td&gt;&lt;td class=&quot;om-d&quot;&gt;18/4–28/4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;יום הזיכרון ויום העצמאות&lt;/td&gt;&lt;td&gt;ג׳–ד׳&lt;/td&gt;&lt;td class=&quot;om-d&quot;&gt;11/5–12/5&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;שבועות&lt;/td&gt;&lt;td&gt;ה׳–ו׳&lt;/td&gt;&lt;td class=&quot;om-d&quot;&gt;10/6–11/6&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;</textarea>
+</div>
+<p style="color:#5C6E6A; font-size:14px;">Colors and content match the full redesign at <a href="index.html">andreyrub.github.io/omanita</a>, so the smoove page converges toward the future site.</p></div>
