@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>אומניתה — בדיקת תוכן</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap">
+<style>
+body{margin:0; background:#F4F6F5; color:#22302D; font-family:'Assistant',Arial,sans-serif; font-size:16px; line-height:1.6;}
+.wrap{max-width:860px; margin:0 auto; padding:26px 18px;}
+h1{font-size:26px; margin:0 0 4px;} h2{font-size:20px; margin:26px 0 10px;}
+.sub{color:#5C6E6A; margin:0 0 18px; font-size:15px;}
+.tbl{background:#fff; border:1px solid #DCE4DF; border-radius:14px; overflow:hidden;}
+.r{display:flex; gap:12px; padding:10px 16px; border-top:1px solid #EEF2EF; align-items:baseline; flex-wrap:wrap;}
+.r:first-child{border-top:0;}
+.st{font-size:18px; width:24px; flex-shrink:0;}
+.ok .st{color:#2E8B57;} .bad{background:#FDF1F4;} .bad .st{color:#C9557B;}
+.off{opacity:.55;}
+.what{font-weight:700;}
+.why{color:#C9557B; font-size:14px; width:100%; padding-right:36px;}
+.meta{color:#5C6E6A; font-size:14px;}
+.badge{display:inline-block; border-radius:999px; padding:2px 12px; font-size:13.5px; font-weight:700; margin-inline-start:8px; vertical-align:2px;}
+.b-ok{background:#DDEBE7; color:#2E7D6C;} .b-bad{background:#F3DCE4; color:#B0446A;}
+.links a{color:#3E8A7D; font-weight:700;}
+.footer{margin-top:26px; font-size:14px; color:#5C6E6A;}
+button{background:#3E8A7D; color:#fff; border:0; border-radius:999px; padding:8px 22px; font-family:inherit; font-weight:700; font-size:15px; cursor:pointer; margin-top:6px;}
+.err-load{background:#FDF1F4; border:1px solid #E8C3D1; border-radius:10px; padding:12px 16px; color:#B0446A;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>🔍 בדיקת התוכן של האתר</h1>
+<p class="sub">הדף הזה מראה בדיוק מה האתר רואה בטבלאות. אחרי כל עדכון בטבלה — היכנסו לכאן ולחצו רענון. אם הכול ירוק ✓ העדכון יופיע באתר תוך מספר דקות.</p>
+<button onclick="location.reload()">🔄 רענון</button>
+<p class="links" style="font-size:14.5px;">עריכה: <a href="https://docs.google.com/spreadsheets/d/1kWy3JAuxhRy6kxYn9UwcodEmH9fqOsXUSG1NA3jNobc/edit">טבלת החוגים</a> · <a href="https://docs.google.com/spreadsheets/d/1Ef_XxV0bJeuKL7HUaJYuSsoyGjRk2I4gST-gfIrMjKI/edit">טבלת המחירון</a> · <a href="index.html">לאתר עצמו</a></p>
+<h2 id="h-sched">חוגים</h2>
+<div class="tbl" id="t-sched"><div class="r"><span class="meta">טוען…</span></div></div>
+<h2 id="h-price">מחירון</h2>
+<div class="tbl" id="t-price"><div class="r"><span class="meta">טוען…</span></div></div>
+<p class="footer">שורה עם ✗ אדום לא תוצג באתר — התיאור מסביר מה לתקן. שורה עם "פעיל = לא" מוסתרת בכוונה. אם יש תקלה כללית, האתר ממשיך להציג את התוכן האחרון שהיה תקין.</p>
+</div>
+<script>window.OM_CHECK_PAGE = true;</script>
+<script src="loader.js"></script>
+<script>
+function chip(el, okN, badN){
+  el.insertAdjacentHTML('beforeend',
+    ' <span class="badge b-ok">' + okN + ' תקינות</span>' +
+    (badN ? ' <span class="badge b-bad">' + badN + ' עם שגיאה</span>' : ''));
+}
+function render(kind, boxId, headId, label){
+  omFetch(kind).then(function(items){
+    var box = document.getElementById(boxId), okN = 0, badN = 0;
+    box.innerHTML = items.map(function(x, i){
+      var r = x.row, name = omEsc((r[kind === 'sched' ? 1 : 0] || '(ללא שם)').trim());
+      var det = kind === 'sched'
+        ? omEsc((r[0]||'').trim()) + ' · ' + omEsc((r[3]||'').trim()) + ' · ' + omEsc((r[4]||'').trim())
+        : omEsc(String(r[2]||'')) + ' ₪ ' + omEsc((r[3]||'').trim());
+      if (x.error) badN++; else okN++;
+      var cls = x.error ? 'r bad' : (x.active ? 'r ok' : 'r ok off');
+      return '<div class="' + cls + '"><span class="st">' + (x.error ? '✗' : '✓') + '</span>' +
+        '<span class="what">' + name + '</span><span class="meta">' + det +
+        (x.active ? '' : ' · <b>פעיל = לא (מוסתר)</b>') + '</span>' +
+        (x.error ? '<span class="why">שורה ' + (i + 2) + ' בטבלה: ' + omEsc(x.error) + '</span>' : '') +
+        '</div>';
+    }).join('') || '<div class="r"><span class="meta">אין שורות בטבלה</span></div>';
+    chip(document.getElementById(headId), okN, badN);
+  }).catch(function(e){
+    document.getElementById(boxId).innerHTML =
+      '<div class="err-load">לא הצלחתי לקרוא את טבלת ה' + label + '. ' +
+      'בדקו שהקובץ משותף כ"כל מי שיש לו הקישור — צופה". (שגיאה: ' + omEsc(String(e)) + ')</div>';
+  });
+}
+render('sched', 't-sched', 'h-sched', 'חוגים');
+render('price', 't-price', 'h-price', 'מחירון');
+</script>
+</body>
+</html>
