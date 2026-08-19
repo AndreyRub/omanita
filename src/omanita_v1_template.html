@@ -1,0 +1,519 @@
+<title>אומניתה, סטודיו לציור</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Assistant:wght@400;600;700&display=swap">
+<style>
+:root{
+  --paper:#FFFFFF;
+  --paper-alt:#ECF3EF;
+  --card:#FFFFFF;
+  --ink:#2C3B38;
+  --ink-soft:#5C6E6A;
+  --rose:#C9557B;
+  --rose-soft:#F3DCE4;
+  --teal:#3E8A7D;
+  --teal-soft:#DDEBE7;
+  --mustard:#C99435;
+  --line:#DCE4DF;
+  --tape:rgba(214,183,110,.55);
+  --shadow:0 2px 14px rgba(44,59,56,.10);
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip; max-width:100%}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Assistant',-apple-system,'Segoe UI',Arial,sans-serif;
+  font-size:17px; line-height:1.65;
+}
+h1,h2,h3{font-family:'Amatic SC','Assistant',cursive; text-wrap:balance; line-height:1.1; margin:0}
+h1{font-size:clamp(44px,8vw,84px); font-weight:700}
+h2{font-size:clamp(34px,5vw,52px); font-weight:700}
+h3{font-size:clamp(26px,3.5vw,32px); font-weight:700}
+a{color:var(--teal)}
+img{max-width:100%; display:block}
+.wrap{max-width:1060px; margin:0 auto; padding:0 20px}
+
+/* nav */
+nav{
+  position:sticky; top:0; z-index:50; background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+nav .wrap{display:flex; align-items:center; gap:8px; padding:10px 20px; flex-wrap:wrap}
+.brand{margin-inline-end:auto; text-decoration:none; display:flex; align-items:center}
+.brand img{height:44px; width:auto; border-radius:8px}
+nav a.lnk{color:var(--ink-soft); text-decoration:none; font-size:15px; font-weight:600; padding:5px 9px; border-radius:999px}
+nav a.lnk:hover, nav a.lnk:focus-visible{background:var(--teal-soft); color:var(--teal); outline:none}
+nav a.cta{background:var(--rose); color:#fff; text-decoration:none; font-weight:700; font-size:15px; padding:7px 16px; border-radius:999px}
+nav a.cta:hover{filter:brightness(1.08)}
+nav .lnk-row{display:flex; gap:2px; flex-wrap:wrap}
+
+/* hero */
+header.hero{background:var(--paper-alt); overflow:hidden}
+.hero .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; padding-top:56px; padding-bottom:64px}
+.hero-logo{width:210px; border-radius:10px; margin-bottom:18px; box-shadow:var(--shadow)}
+.kicker{display:inline-block; background:var(--teal-soft); color:var(--teal); font-weight:700; font-size:14px; letter-spacing:.06em; padding:4px 14px; border-radius:999px; margin-bottom:18px}
+.hero p.lead{font-size:20px; color:var(--ink-soft); max-width:34em; margin:18px 0 26px}
+.hero .actions{display:flex; gap:12px; flex-wrap:wrap}
+.btn{display:inline-block; text-decoration:none; font-weight:700; border-radius:999px; padding:11px 26px; font-size:17px}
+.btn.primary{background:var(--rose); color:#fff}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{border:2px solid var(--teal); color:var(--teal)}
+.btn.ghost:hover{background:var(--teal-soft)}
+.note-open{margin-top:20px; font-weight:600; color:var(--mustard)}
+.hero-art{position:relative; aspect-ratio:1/1.05; max-height:460px}
+.pin{position:absolute; background:var(--card); padding:8px 8px 12px; box-shadow:var(--shadow); border-radius:3px}
+.pin::before{content:""; position:absolute; top:-10px; right:50%; transform:translateX(50%) rotate(-3deg); width:74px; height:22px; background:var(--tape)}
+.pin img{border-radius:2px; width:100%; object-fit:cover}
+.pin.p1{width:52%; right:2%; top:0; transform:rotate(-3.5deg)}
+.pin.p1 img{aspect-ratio:4/5}
+.pin.p2{width:44%; left:2%; top:22%; transform:rotate(2.5deg)}
+.pin.p2 img{aspect-ratio:1/1.15}
+.pin.p3{width:46%; right:14%; bottom:0; transform:rotate(1.5deg)}
+.pin.p3 img{aspect-ratio:4/3}
+
+/* sections */
+section{padding:64px 0}
+section.alt{background:var(--paper-alt)}
+.sec-head{margin-bottom:34px; text-align:center}
+.sec-head .brush{display:block; width:150px; height:10px; margin:10px auto 0}
+.sec-head .brush path{stroke:var(--rose); stroke-width:5; fill:none; stroke-linecap:round}
+.sec-head p{color:var(--ink-soft); margin:12px auto 0; max-width:40em}
+
+/* why cards */
+.grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 22px; box-shadow:var(--shadow)}
+.card .ico{width:40px; height:40px; border-radius:999px; display:flex; align-items:center; justify-content:center; background:var(--teal-soft); color:var(--teal); font-size:20px; margin-bottom:10px}
+.card h3{font-family:'Assistant'; font-size:18px; font-weight:700; margin-bottom:6px}
+.card p{margin:0; color:var(--ink-soft); font-size:15.5px}
+
+/* gallery */
+.gallery{column-count:4; column-gap:14px}
+.gallery figure{margin:0 0 14px; break-inside:avoid; background:var(--card); padding:7px 7px 10px; border-radius:3px; box-shadow:var(--shadow); transform:rotate(var(--r,0deg))}
+.gallery img{border-radius:2px; width:100%}
+.gal-note{text-align:center; color:var(--ink-soft); font-size:15px; margin-top:18px}
+
+/* classes */
+.cities{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+.city{background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); overflow:hidden}
+.city header{padding:16px 22px; display:flex; align-items:baseline; gap:10px}
+.city.kfs header{background:var(--teal-soft)}
+.city.raanana header{background:var(--rose-soft)}
+.city header h3{font-family:'Assistant'; font-size:22px}
+.city header span{color:var(--ink-soft); font-size:14px}
+.city ul{list-style:none; margin:0; padding:8px 0}
+.city li{display:grid; grid-template-columns:1fr auto; gap:4px 14px; padding:12px 22px; border-top:1px solid var(--line); align-items:center}
+.city li:first-child{border-top:0}
+.cls-name{font-weight:700}
+.cls-meta{color:var(--ink-soft); font-size:14.5px; grid-column:1}
+.cls-time{font-weight:700; color:var(--teal); font-size:15px; white-space:nowrap; text-align:left; font-variant-numeric:tabular-nums; grid-row:span 2; align-self:center}
+.city.raanana .cls-time{color:var(--rose)}
+.classes-note{margin-top:18px; text-align:center; color:var(--ink-soft); font-size:15.5px}
+
+/* about */
+.about-grid{display:grid; grid-template-columns:340px 1fr; gap:40px; align-items:start}
+.about-grid .pin{position:static; transform:rotate(-2deg); width:100%}
+.about-txt p{margin:0 0 14px}
+.about-txt .sig{font-family:'Amatic SC',cursive; font-size:34px; color:var(--rose); margin-top:10px}
+.badges{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 20px}
+.badge{background:var(--teal-soft); color:var(--teal); font-size:14px; font-weight:700; padding:4px 13px; border-radius:999px}
+
+/* pricing */
+.price-table{background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); overflow:hidden}
+.price-row{display:grid; grid-template-columns:1fr auto; gap:16px; padding:16px 24px; border-top:1px solid var(--line); align-items:center}
+.price-row:first-child{border-top:0}
+.price-row .p-name{font-weight:700}
+.price-row .p-meta{color:var(--ink-soft); font-size:14.5px}
+.price{font-family:'Amatic SC',cursive; font-size:34px; font-weight:700; color:var(--teal); white-space:nowrap}
+.price small{font-size:16px; font-family:'Assistant'; font-weight:600; color:var(--ink-soft)}
+.price-notes{margin-top:16px; display:grid; gap:8px}
+.price-notes div{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 16px; font-size:15px; color:var(--ink-soft); box-shadow:var(--shadow)}
+.price-notes b{color:var(--mustard)}
+
+/* addresses */
+.addr-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+.addr{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 24px; box-shadow:var(--shadow)}
+.addr h3{font-family:'Assistant'; font-size:20px; margin-bottom:6px}
+.addr p{margin:0; color:var(--ink-soft)}
+.addr .map-link{display:inline-block; margin-top:10px; font-weight:700; font-size:15px}
+
+/* contact */
+.contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:start}
+.cform{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px; box-shadow:var(--shadow)}
+.cform label{display:block; font-weight:700; font-size:14.5px; margin:14px 0 4px}
+.cform label:first-of-type{margin-top:0}
+.cform input,.cform select{
+  width:100%; padding:10px 13px; border:1.5px solid var(--line); border-radius:9px;
+  background:var(--paper); color:var(--ink); font-family:inherit; font-size:16px;
+}
+.cform input:focus,.cform select:focus{outline:2px solid var(--teal); outline-offset:1px; border-color:var(--teal)}
+.cform button{
+  margin-top:20px; width:100%; background:var(--rose); color:#fff; border:0; cursor:pointer;
+  font-family:inherit; font-weight:700; font-size:17px; padding:12px; border-radius:999px;
+}
+.cform button:hover{filter:brightness(1.08)}
+.cform .form-note{font-size:13.5px; color:var(--ink-soft); margin-top:10px; text-align:center}
+.contact-side .card{margin-bottom:14px}
+.contact-side a.big{font-size:19px; font-weight:700; text-decoration:none}
+.wa{color:#1FA855}
+
+/* terms + vacations */
+details{background:var(--card); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow); margin-bottom:10px; padding:0 20px}
+details summary{cursor:pointer; font-weight:700; padding:14px 0; list-style-position:inside}
+details[open] summary{border-bottom:1px solid var(--line)}
+details .body{padding:12px 0 16px; color:var(--ink-soft); font-size:15.5px}
+details .body ul{margin:0; padding-inline-start:20px}
+details .body li{margin-bottom:6px}
+.vac-table{width:100%; border-collapse:collapse; border:1px solid var(--line); background:var(--card); border-radius:14px; overflow:hidden; box-shadow:var(--shadow); font-size:15.5px}
+.vac-table th{background:var(--teal-soft); color:var(--teal); text-align:right; padding:10px 18px; font-size:14px; letter-spacing:.04em}
+.vac-table td{padding:10px 18px; border-top:1px solid var(--line)}
+.vac-table td.dates{font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--ink-soft)}
+.table-scroll{overflow-x:auto}
+
+/* footer */
+footer{background:var(--paper-alt); border-top:1px solid var(--line); padding:34px 0; text-align:center; color:var(--ink-soft); font-size:14.5px}
+footer .brand{display:inline-block; margin-bottom:6px}
+footer a{color:var(--ink-soft)}
+
+/* floating whatsapp */
+.wa-float{position:fixed; bottom:20px; left:20px; z-index:60; background:#1FA855; color:#fff; width:54px; height:54px; border-radius:999px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(0,0,0,.25); text-decoration:none}
+.wa-float svg{width:28px; height:28px; fill:#fff}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr; padding-top:36px; padding-bottom:44px}
+  .hero-art{max-width:420px; margin:0 auto; width:100%; aspect-ratio:1/1.05}
+  .gallery{column-count:3}
+  .grid3{grid-template-columns:1fr 1fr}
+  .cities,.addr-grid,.contact-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .about-grid .pin{max-width:340px; margin:0 auto}
+  section{padding:48px 0}
+  nav a.lnk{font-size:13.5px; padding:4px 7px}
+  .brand img{height:38px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .gallery{column-count:2}
+  .grid3{grid-template-columns:1fr}
+  nav .lnk-row{display:none}
+  .price-row{grid-template-columns:1fr; gap:2px}
+  .city li{grid-template-columns:1fr}
+  .cls-time{grid-row:auto; text-align:right}
+  .price{font-size:30px}
+}
+</style>
+
+<div id="om-draft" dir="rtl" style="position:fixed; top:0; left:0; z-index:99; background:#C99435; color:#fff; font:700 12.5px 'Assistant',Arial,sans-serif; padding:4px 18px; border-radius:0 0 10px 0; letter-spacing:.05em; opacity:.92;">תצוגה מקדימה · טיוטה</div>
+<a class="wa-float" href="https://wa.me/+972524617163" aria-label="ווטסאפ">
+<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4 29l7.3-2.3c1.9 1 3.9 1.6 4.7 1.6 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm5.9 16.9c-.3.8-1.5 1.5-2.4 1.7-.6.1-1.4.2-4.1-.9-3.4-1.4-5.6-4.9-5.8-5.1-.2-.2-1.4-1.9-1.4-3.6s.9-2.5 1.2-2.9c.3-.3.7-.4.9-.4h.7c.2 0 .5-.1.8.6l1.1 2.7c.1.2.2.4 0 .7l-.4.7-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.8 1.7 3.2 1.9.4.2.6.2.9-.1l1.3-1.5c.3-.4.6-.3.9-.2l2.7 1.3c.4.2.7.3.8.5.1.1.1.9-.2 1.5z"/></svg>
+</a>
+
+<nav aria-label="ניווט ראשי" dir="rtl" lang="he">
+<div class="wrap">
+<a class="brand" href="#top"><img src="{{logo}}" alt="אומניתה - יוצרים עם יסמין חוכמה"></a>
+<div class="lnk-row">
+<a class="lnk" href="#why">למה אנחנו</a>
+<a class="lnk" href="#gallery">גלריה</a>
+<a class="lnk" href="#classes">חוגים</a>
+<a class="lnk" href="#about">על יסמין</a>
+<a class="lnk" href="#pricelist">מחירון</a>
+<a class="lnk" href="#address">כתובות</a>
+<a class="lnk" href="#policy">תקנון</a>
+<a class="lnk" href="sadnaot.html">סדנאות</a>
+</div>
+<a class="cta" href="#contact">הרשמה לשיעור ניסיון</a>
+</nav>
+
+<header class="hero" id="top" dir="rtl" lang="he">
+<div class="wrap">
+<div>
+<img class="hero-logo" src="{{logo}}" alt="הלוגו של אומניתה">
+<span class="kicker">כפר סבא · רעננה · קריית שרת</span>
+<h1>יוצרים באהבה<br>עם יסמין חוכמה</h1>
+<p class="lead">חוגי ציור מקצועיים לילדים, לנוער ולמבוגרים, בקבוצות קטנות, עם חומרים איכותיים ואווירה ביתית וחמה. 18 שנות ניסיון בהעצמה דרך אמנות.</p>
+<div class="actions">
+<a class="btn primary" href="#contact">לשיעור ניסיון</a>
+<a class="btn ghost" href="#classes">ימים ושעות</a>
+</div>
+<p class="note-open">✦ ההרשמה לשנה החדשה נפתחה! החוגים מעודכנים לספטמבר 2026. מספר המקומות מוגבל!</p>
+</div>
+<div class="hero-art" aria-hidden="true">
+<div class="pin p1"><img src="{{art03}}" alt=""></div>
+<div class="pin p2"><img src="{{art00}}" alt=""></div>
+<div class="pin p3"><img src="{{art13}}" alt=""></div>
+</div>
+</div>
+</header>
+
+<main dir="rtl" lang="he">
+
+<section id="why">
+<div class="wrap">
+<div class="sec-head">
+<h2>למה לבחור בסטודיו אומניתה?</h2>
+<svg class="brush" viewBox="0 0 150 10" aria-hidden="true"><path d="M4 6 C40 2, 110 9, 146 4"/></svg>
+</div>
+<div class="grid3">
+<div class="card"><div class="ico">🎨</div><h3>18 שנות ניסיון</h3><p>עבודה עם קבוצות ויחידים בכל הגילאים, מילדים ועד מבוגרים.</p></div>
+<div class="card"><div class="ico">💛</div><h3>פסיכולוגיה חיובית</h3><p>החוג כולו נעשה בשיטת העצמה, וכל תלמיד זוכה ליחס אישי.</p></div>
+<div class="card"><div class="ico">👥</div><h3>קבוצות קטנות</h3><p>עד 6–8 תלמידים בקבוצה, למען איכות למידה מקסימלית.</p></div>
+<div class="card"><div class="ico">🖌️</div><h3>חומרים איכותיים</h3><p>עבודה עם חומרים מגוונים הניתנים במקום (פרט לקנבסים).</p></div>
+<div class="card"><div class="ico">🏡</div><h3>אווירה ביתית</h3><p>שתייה קרה וחמה חופשי, סביבה חמה ותומכת ומקרן צמוד.</p></div>
+<div class="card"><div class="ico">🌱</div><h3>יוצר עצמאי</h3><p>החוג מלמד איך להיות יוצר עצמאי: ביטוי אישי וחשיבה מחוץ לקופסה.</p></div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="gallery">
+<div class="wrap">
+<div class="sec-head">
+<h2>מהסטודיו שלנו</h2>
+<svg class="brush" viewBox="0 0 150 10" aria-hidden="true"><path d="M4 6 C40 2, 110 9, 146 4"/></svg>
+<p>עבודות של תלמידי הסטודיו: ילדים, נוער ומבוגרים</p>
+</div>
+<div class="gallery">
+<figure style="--r:-1.4deg"><img src="{{art00}}" alt="ציור ינשוף של תלמיד" loading="lazy"></figure>
+<figure style="--r:.9deg"><img src="{{art13}}" alt="ציור גשר הזהב" loading="lazy"></figure>
+<figure style="--r:-.7deg"><img src="{{art04}}" alt="ציור כלבים וקשת" loading="lazy"></figure>
+<figure style="--r:1.2deg"><img src="{{art07}}" alt="פורטרט בפחם" loading="lazy"></figure>
+<figure style="--r:-1deg"><img src="{{art02}}" alt="ציור יער צבעוני" loading="lazy"></figure>
+<figure style="--r:.8deg"><img src="{{hands}}" alt="תלמידה מציירת בסטודיו" loading="lazy"></figure>
+<figure style="--r:-.9deg"><img src="{{art10}}" alt="ציור כלב בסגנון ואן גוך" loading="lazy"></figure>
+<figure style="--r:1.1deg"><img src="{{art03}}" alt="ציור נוף יער" loading="lazy"></figure>
+<figure style="--r:-1.2deg"><img src="{{art12}}" alt="ציור סירה בים" loading="lazy"></figure>
+<figure style="--r:.7deg"><img src="{{art06}}" alt="רישום פורטרט" loading="lazy"></figure>
+<figure style="--r:-.8deg"><img src="{{studio}}" alt="שיעור בסטודיו" loading="lazy"></figure>
+<figure style="--r:1deg"><img src="{{art09}}" alt="ציור נרוול חמוד" loading="lazy"></figure>
+</div>
+<p class="gal-note">כל העבודות צוירו על ידי תלמידי הסטודיו 💛</p>
+</div>
+</section>
+
+<section id="classes">
+<div class="wrap">
+<div class="sec-head">
+<h2>חוגים: ימים ושעות</h2>
+<svg class="brush" viewBox="0 0 150 10" aria-hidden="true"><path d="M4 6 C40 2, 110 9, 146 4"/></svg>
+<p>בהתאם לביקוש ייפתחו שעות נוספות, ויש גמישות בזמנים</p>
+</div>
+<div class="cities">
+<div class="city kfs">
+<header><h3>📍 כפר סבא</h3><span>גולדשטיין 2, שכונת העלייה</span></header>
+<ul>
+<li><span class="cls-name">ציור מקצועי · כיתות א׳–ג׳</span><span class="cls-time">יום א׳ · 17:00–18:00</span><span class="cls-meta">עד 8 ילדים בקבוצה</span></li>
+<li><span class="cls-name">ציור מקצועי מתקדמים · כיתות ד׳–ו׳</span><span class="cls-time">יום א׳ · 15:45–16:45</span><span class="cls-meta">עד 7 תלמידים בקבוצה</span></li>
+<li><span class="cls-name">נוער, ציור בהתאמה אישית · ז׳–י״ב</span><span class="cls-time">יום ג׳ · 15:45–17:15</span><span class="cls-meta">עד 8 תלמידים בקבוצה</span></li>
+<li><span class="cls-name">ציור מבוגרים · ערב</span><span class="cls-time">יום א׳ · 18:15–20:15</span><span class="cls-meta">גילאי +18</span></li>
+<li><span class="cls-name">ציור מבוגרים · בוקר <b style="color:var(--mustard)">חדש!</b></span><span class="cls-time">יום ג׳ · 10:30–12:30</span><span class="cls-meta">בהדרכת מישל ברם איברי</span></li>
+<li><span class="cls-name">ציור מבוגרים + נוער · ערב</span><span class="cls-time">יום ג׳ · 17:30–19:30</span><span class="cls-meta">גילאי +14</span></li>
+</ul>
+</div>
+<div class="city raanana">
+<header><h3>📍 רעננה, קריית שרת</h3><span>דרור 12ג׳ דירה 4, בין לב הפארק ונווה זמר</span></header>
+<ul>
+<li><span class="cls-name">ציור מקצועי ילדים · כיתות א׳–ג׳</span><span class="cls-time">יום ה׳ · 16:00–17:00</span><span class="cls-meta">עד 8 ילדים בקבוצה</span></li>
+<li><span class="cls-name">ציור מקצועי · כיתות ד׳–ו׳</span><span class="cls-time">יום ד׳ · 16:00–17:00</span><span class="cls-meta">עד 7 ילדים בקבוצה</span></li>
+<li><span class="cls-name">נוער, ציור בהתאמה אישית · ז׳–י״ב</span><span class="cls-time">יום ה׳ · 14:45–15:45</span><span class="cls-meta">עד 6 תלמידים בקבוצה</span></li>
+<li><span class="cls-name">ציור מבוגרים · בוקר</span><span class="cls-time">יום א׳ · 10:30–12:30</span><span class="cls-meta">גילאי +18</span></li>
+<li><span class="cls-name">ציור מבוגרים · בוקר</span><span class="cls-time">יום ד׳ · 10:15–12:15</span><span class="cls-meta">גילאי +18</span></li>
+</ul>
+</div>
+</div>
+<p class="classes-note">🗓️ הרשמה לשיעור ניסיון לשנה החדשה נפתחה · בנוסף: <a href="sadnaot.html">סדנת ציור לחופש הגדול: שני דורות יחד, בוגר וילד</a></p>
+</div>
+</section>
+
+<section class="alt" id="about">
+<div class="wrap">
+<div class="sec-head">
+<h2>נעים מאוד, אני יסמין</h2>
+<svg class="brush" viewBox="0 0 150 10" aria-hidden="true"><path d="M4 6 C40 2, 110 9, 146 4"/></svg>
+</div>
+<div class="about-grid">
+<div class="pin"><img src="{{jasmine}}" alt="יסמין חוכמה מלמדת ציור"></div>
+<div class="about-txt">
+<div class="badges">
+<span class="badge">בוגרת תלמה ילין</span>
+<span class="badge">בוגרת בצלאל בהצטיינות</span>
+<span class="badge">+18 שנות הדרכה</span>
+<span class="badge">מאמנת אישית מוסמכת</span>
+</div>
+<p>האמנות היא מהות חיי. אני אמנית רב־תחומית, בארץ ובחו״ל, עוסקת בפיסול, ציור, מיצגים וניו־מדיה, בעלת ניסיון של מעל 18 שנות הדרכה של ילדים, נוער ומבוגרים.</p>
+<p>חשוב לי, כשאני מלמדת, להתחבר ברגישות למסע האישי של כל אחד ואחת. עם הניסיון והשנים הגעתי לנוסחאות המיטיבות ביותר, מבחינת החומר הנלמד וכמות התלמידים בקבוצה, למען איכות למידה מקסימלית.</p>
+<p>החוג מתרכז בשלושה דברים: לימוד טכניקות, חיזוק הביטוי האישי והחשיבה מחוץ לקופסה, והעצמה אישית דרך תשוקת הציור. ההתנהלות מול התלמידים מבוססת על פסיכולוגיה חיובית מעצימה, מה שנותן לתלמידים עוד דחיפה להאמין בעצמם.</p>
+<p>אני מזמינה את כל המשפחה, הורים וילדים, להיות שותפים איתי בעולם הציור.</p>
+<p class="sig">יסמין חוכמה, אומניתה</p>
+<p style="font-size:14.5px; color:var(--ink-soft)">📰 עיתון צומת השרון המליץ על הסטודיו כאחד החוגים המובילים באזור השרון. <a href="https://www.tzomet-kfs.co.il/experts/20430">לכתבה המלאה</a></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pricelist">
+<div class="wrap">
+<div class="sec-head">
+<h2>מחירון חודשי</h2>
+<svg class="brush" viewBox="0 0 150 10" aria-hidden="true"><path d="M4 6 C40 2, 110 9, 146 4"/></svg>
+</div>
+<div class="price-table">
+<div class="price-row"><div><div class="p-name">ציור מקצועי · כיתות א׳–ג׳</div><div class="p-meta">רעננה / כפר סבא · עד 8 ילדים · כולל כל החומרים</div></div><div class="price">400 <small>₪ לחודש</small></div></div>
+<div class="price-row"><div><div class="p-name">ציור מקצועי מתקדמים · כיתות ד׳–ו׳</div><div class="p-meta">רעננה / כפר סבא · עד 7 ילדים · כולל כל החומרים</div></div><div class="price">450 <small>₪ לחודש</small></div></div>
+<div class="price-row"><div><div class="p-name">נוער · שעה בהתאמה אישית · ז׳–י״ב</div><div class="p-meta">רעננה · עד 6 תלמידים · כולל חומרים (ללא קנבסים)</div></div><div class="price">450 <small>₪ לחודש</small></div></div>
+<div class="price-row"><div><div class="p-name">נוער · שעה וחצי · ז׳–י״ב</div><div class="p-meta">עד 8 תלמידים · כולל חומרים (ללא קנבסים)</div></div><div class="price">560 <small>₪ לחודש</small></div></div>
+<div class="price-row"><div><div class="p-name">ציור מבוגרים</div><div class="p-meta">רעננה / כפר סבא · תשלום בסוף החודש לפי מספר ההגעות · כולל חומרים (ללא קנבסים; יש קנבסים ממוחזרים ודפי קנבס)</div></div><div class="price">140 <small>₪ לשיעור שעתיים</small></div></div>
+</div>
+<div class="price-notes">
+<div>💛 <b>הנחה 5%</b> לבן משפחה נוסף</div>
+<div>✏️ תפיסת מקום לשיעור ניסיון כרוכה בדמי רצינות של <b>50 ₪</b> בביט או בפייבוקס, ורישום בווטסאפ של יום ושעת החוג</div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="address">
+<div class="wrap">
+<div class="sec-head">
+<h2>איפה אנחנו?</h2>
+<svg class="brush" viewBox="0 0 150 10" aria-hidden="true"><path d="M4 6 C40 2, 110 9, 146 4"/></svg>
+</div>
+<div class="addr-grid">
+<div class="addr"><h3>🏠 סטודיו כפר סבא</h3><p>גולדשטיין 2, שכונת העלייה, סמוך לצומת רעננה צפון, צמוד לשכונה הירוקה המחברת בין כפר סבא לרעננה</p><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%D7%92%D7%95%D7%9C%D7%93%D7%A9%D7%98%D7%99%D7%99%D7%9F%202%20%D7%9B%D7%A4%D7%A8%20%D7%A1%D7%91%D7%90">פתיחה במפות ←</a></div>
+<div class="addr"><h3>🏠 סטודיו רעננה</h3><p>דרור 12ג׳ דירה 4, קריית שרת, בין לב הפארק ונווה זמר</p><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%D7%93%D7%A8%D7%95%D7%A8%2012%20%D7%A8%D7%A2%D7%A0%D7%A0%D7%94">פתיחה במפות ←</a></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+<div class="sec-head">
+<h2>הרשמה ויצירת קשר</h2>
+<svg class="brush" viewBox="0 0 150 10" aria-hidden="true"><path d="M4 6 C40 2, 110 9, 146 4"/></svg>
+<p>מלאו פרטים ונחזור אליכם, או כתבו לנו ישירות בווטסאפ</p>
+</div>
+<div class="contact-grid">
+<div class="cform">
+<label for="f-first">שם פרטי</label><input id="f-first" autocomplete="given-name">
+<label for="f-last">שם משפחה</label><input id="f-last" autocomplete="family-name">
+<label for="f-phone">נייד</label><input id="f-phone" type="tel" autocomplete="tel" dir="ltr" style="text-align:right">
+<label for="f-act">הפעילות בה אני מעוניין/ת</label>
+<select id="f-act">
+<option>חוג ילדים א׳–ג׳, כפר סבא</option>
+<option>חוג ילדים א׳–ג׳, רעננה</option>
+<option>חוג מתקדמים ד׳–ו׳, כפר סבא</option>
+<option>חוג מתקדמים ד׳–ו׳, רעננה</option>
+<option>חוג נוער ז׳–י״ב, כפר סבא</option>
+<option>חוג נוער ז׳–י״ב, רעננה</option>
+<option>חוג מבוגרים, כפר סבא</option>
+<option>חוג מבוגרים, רעננה</option>
+<option>סדנאות</option>
+<option>אחר</option>
+</select>
+<button id="f-send" type="button">שליחה בווטסאפ 📨</button>
+<p class="form-note">הפרטים נשלחים ישירות לווטסאפ של יסמין, ללא שמירה באתר</p>
+</div>
+<div class="contact-side">
+<div class="card"><div class="ico">📞</div><h3>טלפון</h3><p><a class="big" href="tel:+972524617163" dir="ltr">052-461-7163</a></p></div>
+<div class="card"><div class="ico">💬</div><h3>ווטסאפ</h3><p><a class="big wa" href="https://wa.me/+972524617163">שלחו הודעה ←</a></p></div>
+<div class="card"><div class="ico">✉️</div><h3>מייל</h3><p><a class="big" href="mailto:jasminh2000@yahoo.com" dir="ltr">jasminh2000@yahoo.com</a></p></div>
+<div class="card"><div class="ico">📘</div><h3>פייסבוק</h3><p><a class="big" href="https://www.facebook.com/omanitaj">אומניתה בפייסבוק ←</a></p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="policy">
+<div class="wrap">
+<div class="sec-head">
+<h2>תקנון ולוח חופשות</h2>
+<svg class="brush" viewBox="0 0 150 10" aria-hidden="true"><path d="M4 6 C40 2, 110 9, 146 4"/></svg>
+</div>
+
+<details>
+<summary>כללי: למה יש תקנון?</summary>
+<div class="body"><p>התקנון נועד לקבוע נהלים ברורים ומוסכמים, המבהירים את הזכויות והחובות של כל הנוטלים חלק בתהליך החינוכי בסטודיו, תוך קיום אווירה חינוכית בונה ומקדמת, המושתתת על סבלנות, הגינות, כבוד הדדי, דרך ארץ ונטילת אחריות. התקנון מנוסח בלשון זכר מטעמי נוחות ומתייחס לכל המגדרים.</p></div>
+</details>
+
+<details>
+<summary>התנהגות</summary>
+<div class="body"><ul>
+<li>איסור מגע פיזי הנעשה בניגוד לרצונו של תלמיד/ה.</li>
+<li>תלמידים יימנעו משימוש בשפה בוטה, מעליבה או פוגעת כלפי תלמידים אחרים או המדריכה, ולהפך.</li>
+<li>תלמיד לא יפריע למדריכה או לקבוצה במהלך השיעור, ויפגין התנהגות נאותה לאורך כל השיעור.</li>
+</ul></div>
+</details>
+
+<details>
+<summary>נוכחות, השלמות וביטולים</summary>
+<div class="body"><ul>
+<li>יש להגיע לכל המפגשים. אין החזר על שיעורים שהוחמצו, אלא בהיעדרות מוצדקת שעודכנה מראש, ואז ננסה לתאם השלמה בשיעור אחר (ההשלמה באחריותכם).</li>
+<li>המדריכה מחויבת להגיע לכל השיעורים המתואמים. בהיעדרות מוצדקת מצדה יינתן שיעור החזר במועד שיתואם, או מדריך/ה מחליף/ה.</li>
+<li>יש להגיע בזמן ולהישאר עד תום השיעור. תלמיד שרוצה לעזוב מוקדם יעדכן את המדריכה לפני תחילת השיעור.</li>
+<li>עזיבת החוג לפני תום השנה: בהודעה של שבועיים מראש. התשלום עד סוף אותו חודש, ויתרת התשלומים תוחזר. תקף עד חודש מרץ; מחודש מרץ אין החזר תשלומים בביטול.</li>
+<li>תלונות יש להפנות בכתב למייל <a href="mailto:jasminh2000@yahoo.com" dir="ltr">jasminh2000@yahoo.com</a>, וכל תלונה תיבדק לעומק.</li>
+</ul></div>
+</details>
+
+<details>
+<summary>תשלומים וקבוצות</summary>
+<div class="body"><ul>
+<li>התשלום בצ׳קים לכל השנה מראש (צ׳ק לכל תחילת חודש) או בכרטיס אשראי בהוראת קבע למספר חודשי החוג.</li>
+<li>אנו מבקשים אישור שימוש בחומרי מדיה (תמונות ווידאו) שצולמו בשיעורים לצורכי הסטודיו, באישור התלמידים.</li>
+<li>מינימום לפתיחת קבוצה: 6 ילדים. במידת הצורך נוכל להפסיק פעילות קבוצה או לאחד אותה עם קבוצה אחרת.</li>
+<li>אם תחזור מגבלת קורונה, הקבוצות יוקטנו ותעודכן עלות בהתאם. מי שלא ירצה להמשיך, כספו יוחזר.</li>
+<li>באירוע ביטחוני חיצוני שבגללו נסגרים החוגים ליום, השיעור לא מוחזר. באירוע ארוך טווח או חוזר, יינתן החזר בדרך שתתאים לסיטואציה.</li>
+</ul></div>
+</details>
+
+<details>
+<summary>תקנון חוג מבוגרים</summary>
+<div class="body"><ul>
+<li>התשלום בסוף החודש לפי מספר ההגעות (במסלול תשלום לפי שיעורים).</li>
+<li>אי־הגעה שלא עודכנה יום מראש: חיוב מלא על השיעור.</li>
+<li>מחלה שהתגלתה ביום השיעור עצמו: תשלום סמלי של 70 ₪.</li>
+<li>לקיום שיעור דרושים 3 תלמידים לפחות; אם אין, המדריכה תעדכן בקבוצה על ביטול.</li>
+</ul></div>
+</details>
+
+<h3 id="vacations" style="margin:30px 0 14px; text-align:center">🎈 לוח חופשות 2026–2027</h3>
+<div class="table-scroll">
+<table class="vac-table">
+<thead><tr><th>חג</th><th>ימים</th><th>תאריכים</th></tr></thead>
+<tbody>
+<tr><td>ראש השנה</td><td>ו׳–א׳</td><td class="dates">11/9–13/9</td></tr>
+<tr><td>יום כיפור</td><td>א׳–ב׳</td><td class="dates">20/9–21/9</td></tr>
+<tr><td>סוכות</td><td>ו׳–ש׳</td><td class="dates">25/9–3/10</td></tr>
+<tr><td>חנוכה</td><td>א׳–ש׳</td><td class="dates">6/12–12/12</td></tr>
+<tr><td>פורים</td><td>ג׳–ד׳</td><td class="dates">23/3–24/3</td></tr>
+<tr><td>פסח</td><td>ד׳–ד׳</td><td class="dates">18/4–28/4</td></tr>
+<tr><td>יום הזיכרון ויום העצמאות</td><td>ג׳–ד׳</td><td class="dates">11/5–12/5</td></tr>
+<tr><td>שבועות</td><td>ה׳–ו׳</td><td class="dates">10/6–11/6</td></tr>
+</tbody>
+</table>
+</div>
+<p style="text-align:center; font-family:'Amatic SC',cursive; font-size:32px; color:var(--rose); margin-top:30px">שתהיה לנו שנת יצירה פורה ומוצלחת! 🎨</p>
+</div>
+</section>
+
+</main>
+
+<footer dir="rtl" lang="he">
+<div class="wrap">
+<a class="brand" href="#top" style="justify-content:center"><img src="{{logo}}" alt="אומניתה" style="height:56px; width:auto; border-radius:8px"></a>
+<p style="margin:8px 0 4px">חוגי ציור מקצועיים ויצירה · כפר סבא · רעננה · יסמין חוכמה</p>
+<p style="margin:4px 0"><a href="tel:+972524617163" dir="ltr">052-461-7163</a> · <a href="mailto:jasminh2000@yahoo.com" dir="ltr">jasminh2000@yahoo.com</a> · <a href="https://www.facebook.com/omanitaj">פייסבוק</a> · <a href="https://coaching.vp4.me/jcoaching">אימון אישי</a> · <a href="sadnaot.html">סדנאות</a></p>
+</div>
+</footer>
+
+<script>
+document.getElementById('f-send').addEventListener('click', function(){
+  var g = function(id){ return document.getElementById(id).value.trim(); };
+  var msg = 'שלום יסמין! אשמח לפרטים על הרשמה 🎨\n' +
+    'שם: ' + g('f-first') + ' ' + g('f-last') + '\n' +
+    'נייד: ' + g('f-phone') + '\n' +
+    'פעילות: ' + document.getElementById('f-act').value;
+  window.open('https://wa.me/972524617163?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+<script src="loader.js"></script>
